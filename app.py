@@ -40,9 +40,13 @@ if st.button("Predict Risk"):
     water quality: {water_quality}, market distance: {market_distance} km.
     Generate a short action plan for an NGO to support this household."""
 
-    st.info("Generating AI-based action plan...")
+    # st.info("Generating AI-based action plan...")
+    # response = gemini_model.generate_content(prompt)
+    # ai_plan = response.text.strip()
+    with st.spinner("Generating AI-based action plan..."):
     response = gemini_model.generate_content(prompt)
     ai_plan = response.text.strip()
+
 
     st.subheader("Prediction Result:")
     st.write("🔴 High Risk" if prediction == 1 else "🟢 Low Risk")
