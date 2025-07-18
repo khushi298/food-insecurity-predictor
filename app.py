@@ -47,11 +47,6 @@ if st.button("Predict Risk"):
         response = gemini_model.generate_content(prompt)
         ai_plan = response.text.strip()
 
-    st.success("AI Action Plan generated successfully!")
-    st.markdown(ai_plan)
-
-
-
     st.subheader("Prediction Result:")
     st.write("🔴 High Risk" if prediction == 1 else "🟢 Low Risk")
     st.write("💡 Recommendation:", base_recommendation)
