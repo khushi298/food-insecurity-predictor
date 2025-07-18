@@ -44,8 +44,12 @@ if st.button("Predict Risk"):
     # response = gemini_model.generate_content(prompt)
     # ai_plan = response.text.strip()
     with st.spinner("Generating AI-based action plan..."):
-    response = gemini_model.generate_content(prompt)
-    ai_plan = response.text.strip()
+        response = gemini_model.generate_content(prompt)
+        ai_plan = response.text.strip()
+
+    st.success("AI Action Plan generated successfully!")
+    st.markdown(ai_plan)
+
 
 
     st.subheader("Prediction Result:")
